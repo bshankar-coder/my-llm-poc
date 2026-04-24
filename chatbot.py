@@ -8,7 +8,16 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 conversation_history = []
 
-system_prompt = "You are a helpful research assistant. Answer clearly and concisely."
+prompts = {
+    "research": "You are a research assistant...",
+    "analyst":  "You are a data analyst...",
+    "tutor":    "You are a patient tutor..."
+}
+
+print("Choose a mode: research / analyst / tutor")
+mode = input("Mode: ").strip().lower()
+
+system_prompt = prompts.get(mode, prompts["research"])
 
 print("Chatbot ready! Type 'quit' to exit.")
 print("-" * 40)
