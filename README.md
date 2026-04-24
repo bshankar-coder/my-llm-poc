@@ -1,11 +1,19 @@
 # My LLM POC Chatbot
 
-A simple chatbot application that uses the Groq API to provide conversational AI responses.
+A simple chatbot application that uses the Groq API to provide conversational AI responses. Features both a command-line interface and a modern web UI built with Gradio.
 
 ## Prerequisites
 
 - Python 3.7 or higher
 - A Groq API key (get one from [Groq Console](https://console.groq.com/))
+
+## Project Structure
+
+- `app.py`: Main entry point for the web UI application
+- `ui.py`: Gradio-based user interface components and event handling
+- `llm.py`: Handles communication with the Groq API
+- `config.py`: Configuration settings, model definitions, and system prompts
+- `chatbot.py`: Command-line interface version of the chatbot
 
 ## Setup
 
@@ -28,7 +36,7 @@ A simple chatbot application that uses the Groq API to provide conversational AI
 
 4. **Install dependencies**:
    ```bash
-   pip install groq python-dotenv
+   pip install groq python-dotenv gradio
    ```
 
 5. **Set up your API key**:
@@ -40,6 +48,19 @@ A simple chatbot application that uses the Groq API to provide conversational AI
    - Replace `your_api_key_here` with your actual API key from Groq.
 
 ## Running the Chatbot
+
+### Web UI (Recommended)
+
+1. Ensure your virtual environment is activated (if using one).
+
+2. Run the web application:
+   ```bash
+   python app.py
+   ```
+
+3. Open your browser and navigate to `http://localhost:7860`
+
+### Command-Line Interface
 
 1. Ensure your virtual environment is activated (if using one).
 
